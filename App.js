@@ -13,6 +13,10 @@ let PORT = process.env.PORT;
 let mongoLiveUrl = process.env.MongLiveUrl;
 let db;
 
+// checking
+app.get("/",(req,res)=>{
+ res.send("you are on server for testing")
+})
 // fetching data form location collection
 app.get("/location", (req, res) => {
   db.collection("location")
