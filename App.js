@@ -9,7 +9,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 let mongoClint = mongo.MongoClient;
-let PORT = process.env.PORT;
+let PORT = process.env.PORT||9870;
 let mongoLiveUrl = process.env.MongLiveUrl;
 let db;
 
