@@ -9,7 +9,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 let mongoClint = mongo.MongoClient;
-let PORT = process.env.PORT||9870;
+let port = process.env.PORT||9870;
 let mongoLiveUrl = process.env.MongLiveUrl;
 let db;
 
@@ -204,8 +204,8 @@ mongoClint.connect(mongoLiveUrl, (err, clint) => {
   if (err) throw console.log("error while connecting");
   db = clint.db("learnNode");
   // running the node js env.
-  app.listen(PORT, (err) => {
+  app.listen(port, (err) => {
     if (err) throw err;
-    console.log(`express is running on port no: ${PORT}`);
+    console.log(`express is running on port no: ${port}`);
   });
 });
